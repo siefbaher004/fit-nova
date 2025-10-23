@@ -4,12 +4,7 @@ import { ThemeProvider } from "./components/theme-provider";
 
 export default function Providers({ children }: Providerprops) {
   return (
-    <ThemeProvider
-      attribute="class"
-      defaultTheme="system"
-      enableSystem
-      disableTransitionOnChange
-    >
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
       {children}
     </ThemeProvider>
   );
