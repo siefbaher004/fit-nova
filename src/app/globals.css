@@ -2,26 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Text */
+    --color-primary: #ff4100;
+    --color-primary-main: #242424;
+    --color-primary-secondary: #f3f3f4;
+
+    /* Background */
+    --color-bg-main: #fffffff2;
+    --color-bg-secondary: #ffffff99;
+
+    /* Chat  */
+    --chat-bot-bg: #24242480;
+    --chat-user-bg: #ff6a0080;
+    --chat-user-bg-hide: #00000080;
+    --chat-bg-previous-conversations: #242424cc;
+    --chat-border: #ff4100;
+    --chat-bg: #1a1a1a80;
   }
-}
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
+  .dark {
+    /* Text */
+    --color-primary: #ff4100;
+    --color-primary-main: #f3f3f4;
+    --color-primary-secondary: #f3f3f4;
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+    /* Background */
+    --color-bg-main: #242424f2;
+    --color-bg-secondary: #24242499;
+
+    /* Chat  */
+    --chat-bot-bg: #24242480;
+    --chat-user-bg: #ff6a0080;
+    --chat-user-bg-hied: #00000080;
+    --chat-bg-previous-conversations: #242424cc;
+    --chat-bg: #1a1a1a80;
+  }
+
+  body {
+    @apply bg-background text-foreground;
   }
 }
